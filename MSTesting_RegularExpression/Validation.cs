@@ -25,6 +25,21 @@ namespace MSTesting_RegularExpression
                 return false;
             }
         }
-        
+        public bool LastNameValidation(string lName) // Creating a method for Last name validation
+        {
+            string pattern = "^[A-Z][a-z]{2,}$"; // Regex for last name validation
+            //If name entered by user is match with regex then it is valid otherwise not
+            if (Regex.IsMatch(lName, pattern))
+            {
+                Console.WriteLine($"\nYour last name \"{lName}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour last name \"{lName}\" is not valid");
+                Console.WriteLine("\nPlease follow naming convention of last name");
+                return false;
+            }
+        }
     }
 }

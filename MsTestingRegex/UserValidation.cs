@@ -20,6 +20,21 @@ namespace MsTestingRegex
             bool actual = validation.FirstNameValidation(firstName);
             //Assert
             Assert.AreEqual(expected, actual);            
-        }        
+        }
+        [TestMethod]
+        //Checking for multiple last name
+        [DataRow("Kadivar", true)]
+        [DataRow("Ab", false)]
+        [DataRow("kadivar", false)]
+        public void GivenLastNameValidation(string lastName, bool expected) // Testing for Lastname Validation
+        {
+            //Arrange
+            Validation validation = new Validation();
+            //Act
+            bool actual = validation.FirstNameValidation(lastName);
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
