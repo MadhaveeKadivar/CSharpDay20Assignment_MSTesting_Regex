@@ -90,5 +90,19 @@ namespace MsTestingRegex
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        //Checking for multiple password samples
+        [DataRow("dfgDnjvbn", false)]
+        [DataRow("A5sdf@#df", true)]
+        [DataRow("F5G@f", false)]
+        [DataRow("8465ADFG", true)]
+        public void GivenPasswordRule3Validation(string password, bool expected) // Testing for Password Rule - 3  Validation
+        {
+            //Act
+            bool actual = validation.PasswordRule3Validation(password);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
