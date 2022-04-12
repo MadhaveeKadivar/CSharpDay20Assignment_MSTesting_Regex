@@ -56,5 +56,20 @@ namespace MSTesting_RegularExpression
                 return false;
             }
         }
+        public bool MobileNumberValidation(string mobileNo) // Creating a method for Mobile Number validation
+        {
+            string pattern = "^[9][1][ ][6-9][0-9]{9}$"; // Regex for Mobile number validation
+            //If Mobile Number entered by user is match with regex then it is valid otherwise not
+            if (Regex.IsMatch(mobileNo, pattern))
+            {
+                Console.WriteLine($"\nYour Mobile Number \"{mobileNo}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour Mobile Number \"{mobileNo}\" is not valid");
+                return false;
+            }
+        }
     }
 }

@@ -37,6 +37,13 @@ namespace MSTesting_RegularExpression
             bool checkEmail = validation.EmailValidation(email); //Calling method to check email is valid or not with argument
             if (!checkEmail)//If not valid then ask user to enter email again
                 goto Email;
+            //user Mobile Number validation
+            MobileNumber:
+            Console.WriteLine("\n\nEnter your Mobile Number : ");
+            string mNo = Console.ReadLine(); //storing mobile number entered by user in variable
+            bool checkMobileNo = validation.MobileNumberValidation(mNo); //Calling method to check mobile number is valid or not with argument
+            if (!checkMobileNo)//If not valid then ask user to enter mobile number again
+                goto MobileNumber;
         }       
     }
 }
