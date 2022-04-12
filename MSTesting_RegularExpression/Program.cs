@@ -30,6 +30,13 @@ namespace MSTesting_RegularExpression
             bool checkLastName = validation.LastNameValidation(lName); //Calling method to check last name is valid or not with argument
             if (!checkLastName)//If not valid then ask user to enter last name again
                 goto Lastname;
+            // User Email Validation
+            Email:
+            Console.WriteLine("\n\nEnter your email name : ");
+            string email = Console.ReadLine(); //storing email address entered by user in variable
+            bool checkEmail = validation.EmailValidation(email); //Calling method to check email is valid or not with argument
+            if (!checkEmail)//If not valid then ask user to enter email again
+                goto Email;
         }       
     }
 }

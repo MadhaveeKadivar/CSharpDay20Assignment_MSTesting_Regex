@@ -7,6 +7,13 @@ namespace MsTestingRegex
     [TestClass]
     public class UserValidation
     {
+        Validation validation;
+        [TestInitialize]
+        public void SetUp()
+        {
+            // common Arrange
+            validation = new Validation();
+        }
         [TestMethod]
         //Checking for multiple first name
         [DataRow("Madhavee",true)]
@@ -14,8 +21,6 @@ namespace MsTestingRegex
         [DataRow("madhavee",false)]
         public void GivenFirstNameValidation(string firstName,bool expected) // Testing for Firstname Validation
         {
-            //Arrange
-            Validation validation = new Validation();
             //Act
             bool actual = validation.FirstNameValidation(firstName);
             //Assert
@@ -28,13 +33,23 @@ namespace MsTestingRegex
         [DataRow("kadivar", false)]
         public void GivenLastNameValidation(string lastName, bool expected) // Testing for Lastname Validation
         {
-            //Arrange
-            Validation validation = new Validation();
             //Act
             bool actual = validation.FirstNameValidation(lastName);
             //Assert
             Assert.AreEqual(expected, actual);
-
+        }
+        [TestMethod]
+        //Checking for multiple email samples
+        [DataRow("abc123@.com", false)]
+        [DataRow("abc@abc@gmail.com", false)]
+        [DataRow("abc+100@gmail.com", true)]
+        [DataRow("abc@1.com", true)]
+        public void GivenEmailValidation(string email, bool expected) // Testing for Email Validation
+        {
+            //Act
+            bool actual = validation.EmailValidation(email);
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
