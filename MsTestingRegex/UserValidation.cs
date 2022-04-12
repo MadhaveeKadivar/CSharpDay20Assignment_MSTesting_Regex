@@ -52,7 +52,7 @@ namespace MsTestingRegex
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        //Checking for multiple email samples
+        //Checking for multiple mobile numbers
         [DataRow("91 9652545874", true)]
         [DataRow("919652545874", false)]
         [DataRow("9144 9652545874", false)]
@@ -61,6 +61,19 @@ namespace MsTestingRegex
         {
             //Act
             bool actual = validation.MobileNumberValidation(mobileNumber);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        //Checking for multiple password samples
+        [DataRow("dfghnjvbn", true)]
+        [DataRow("ADF@#$%JVGB", true)]
+        [DataRow("FVGdf", false)]
+        [DataRow("8745fgvhA", true)]
+        public void GivenPasswordRule1Validation(string password, bool expected) // Testing for Password Rule - 1  Validation
+        {
+            //Act
+            bool actual = validation.PasswordValidation(password);
             //Assert
             Assert.AreEqual(expected, actual);
         }

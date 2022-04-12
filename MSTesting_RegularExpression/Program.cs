@@ -44,6 +44,16 @@ namespace MSTesting_RegularExpression
             bool checkMobileNo = validation.MobileNumberValidation(mNo); //Calling method to check mobile number is valid or not with argument
             if (!checkMobileNo)//If not valid then ask user to enter mobile number again
                 goto MobileNumber;
+            //user Password validation
+            Password:
+            Console.WriteLine("\nPassword Rules");
+            Console.WriteLine("Rule 1 : Minimum 8 Character");
+            Console.WriteLine("\n\nEnter your Password : ");
+            string password = Console.ReadLine(); //storing password entered by user in variable
+            bool checkPassword = validation.PasswordValidation(password); //Calling method to check password follows all the rules or not with argument
+            if (!checkPassword)//If not follow then ask user to enter password again
+                goto Password;
+            Console.ReadLine();
         }       
     }
 }
