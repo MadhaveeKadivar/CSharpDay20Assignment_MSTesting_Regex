@@ -73,7 +73,20 @@ namespace MsTestingRegex
         public void GivenPasswordRule1Validation(string password, bool expected) // Testing for Password Rule - 1  Validation
         {
             //Act
-            bool actual = validation.PasswordValidation(password);
+            bool actual = validation.PasswordRule1Validation(password);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        //Checking for multiple password samples
+        [DataRow("dfghnjvbn", false)]
+        [DataRow("A5sdf@#34", true)]
+        [DataRow("FVGdf", false)]
+        [DataRow("wsdfgADFG65@3", true)]
+        public void GivenPasswordRule2Validation(string password, bool expected) // Testing for Password Rule - 2  Validation
+        {
+            //Act
+            bool actual = validation.PasswordRule2Validation(password);
             //Assert
             Assert.AreEqual(expected, actual);
         }
